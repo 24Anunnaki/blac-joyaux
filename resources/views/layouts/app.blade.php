@@ -79,7 +79,7 @@
     </footer>
 
     <!-- BOUTON WHATSAPP -->
-    <a href="https://wa.me/2250700000000" class="wa" target="_blank">💬</a>
+    <a href="https://wa.me/+2250708771557" class="wa" target="_blank">💬</a>
 
 </body>
 </html>
