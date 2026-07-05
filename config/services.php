@@ -35,4 +35,10 @@ return [
         ],
     ],
 
+
+    'whatsapp' => [
+        // Numéro WhatsApp Business de la marque, format international sans +
+        'numero' => env('WHATSAPP_NUMBER', '2250700000000'),
+    ],
+
 ];
