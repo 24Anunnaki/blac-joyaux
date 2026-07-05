@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+// Boutique publique Blac Joyaux
+require __DIR__.'/boutique.php';
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Administration Blac Joyaux
+require __DIR__.'/admin.php';
