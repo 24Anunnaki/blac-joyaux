@@ -29,6 +29,26 @@ class CatalogueController extends Controller
             'categories' => Categorie::withCount('produits')->orderBy('nom')->get(),
         ]);
     }
+    public function capsule()
+        {
+            return view('boutique.capsule');
+        }
+
+        public function capsuleSaphirNoir()
+        {
+            return view('boutique.capsule-saphir-noir');
+        }
+
+        public function capsuleIndigo()
+        {
+            return view('boutique.capsule-indigo-bla');
+        }
+
+        public function capsuleKente()
+        {
+            return view('boutique.capsule-kente');
+        }
+
 
     public function index(Request $request)
     {

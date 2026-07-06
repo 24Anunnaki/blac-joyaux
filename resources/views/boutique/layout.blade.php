@@ -184,7 +184,7 @@
         <a href="{{ route('boutique.accueil') }}" class="logo">Blac Joyaux</a>
         <nav class="nav-site">
             <a href="{{ route('boutique.catalogue') }}" class="{{ request()->routeIs('boutique.catalogue') ? 'actif' : '' }}">Les sacs</a>
-            <a href="{{ route('boutique.catalogue', ['occasion' => 'Cadeau']) }}" class="masquer-mobile">Offrir</a>
+            <a href="{{ route('boutique.capsule') }}" class="masquer-mobile">Capsule</a>
             <a href="https://wa.me/{{ config('boutique.whatsapp') }}" target="_blank" rel="noopener" class="masquer-mobile">WhatsApp</a>
             <a href="{{ route('boutique.panier') }}" class="lien-panier {{ request()->routeIs('boutique.panier') ? 'actif' : '' }}">
                 Panier
