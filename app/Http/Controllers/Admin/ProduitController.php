@@ -40,6 +40,7 @@ class ProduitController extends Controller
             'couleurs' => Couleur::orderBy('nom')->get(),
             'matieres' => Produit::matieres(),
             'occasions' => Produit::occasions(),
+            'sacsExistants' => Produit::orderBy('nom')->get(['id', 'nom']),
         ]);
     }
 
@@ -53,6 +54,19 @@ class ProduitController extends Controller
 
         $produit = Produit::create($donnees);
         $produit->couleurs()->sync($request->input('couleurs', []));
+
+        // Variantes de couleur (Option A) : relier les coloris d'un même modèle
+        if ($request->filled('modele_parent_id')) {
+            // On rattache ce coloris à un modèle existant :
+            // on reprend le modele_id du parent choisi.
+            $parent = Produit::findOrFail($request->modele_parent_id);
+            $produit->modele_id = $parent->modele_id ?? $parent->id;
+        } else {
+            // Premier coloris d'un nouveau modèle :
+            // il devient son propre chef de file.
+            $produit->modele_id = $produit->id;
+        }
+        $produit->save();
 
         $this->enregistrerImages($request, $produit);
 
@@ -70,6 +84,7 @@ class ProduitController extends Controller
             'couleurs' => Couleur::orderBy('nom')->get(),
             'matieres' => Produit::matieres(),
             'occasions' => Produit::occasions(),
+            'sacsExistants' => Produit::where('id', '!=', $produit->id)->orderBy('nom')->get(['id', 'nom']),
         ]);
     }
 
@@ -86,6 +101,16 @@ class ProduitController extends Controller
 
         $produit->update($donnees);
         $produit->couleurs()->sync($request->input('couleurs', []));
+
+        // Variantes de couleur (Option A) : re-rattachement possible depuis l'édition
+        if ($request->filled('modele_parent_id')) {
+            $parent = Produit::findOrFail($request->modele_parent_id);
+            $produit->modele_id = $parent->modele_id ?? $parent->id;
+            $produit->save();
+        } elseif (! $produit->modele_id) {
+            $produit->modele_id = $produit->id;
+            $produit->save();
+        }
 
         $this->enregistrerImages($request, $produit);
 

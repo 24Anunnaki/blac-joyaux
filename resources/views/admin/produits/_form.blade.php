@@ -58,6 +58,20 @@
     </div>
 
     <div class="champ">
+        <label for="modele_parent_id">Rattacher à un modèle existant (variante de couleur)</label>
+        <select id="modele_parent_id" name="modele_parent_id">
+            <option value="">— Nouveau modèle indépendant —</option>
+            @foreach ($sacsExistants as $sac)
+                <option value="{{ $sac->id }}" @selected(old('modele_parent_id') == $sac->id)>{{ $sac->nom }}</option>
+            @endforeach
+        </select>
+        <p style="font-size: 13px; color: var(--gris); margin-top: 6px;">
+            Exemple : vous créez « Joyau de Bla — Rouge » ? Rattachez-le à « Joyau de Bla — Noir »
+            pour que les pastilles de couleur relient les deux fiches sur le site.
+        </p>
+    </div>
+
+    <div class="champ">
         <label>Couleurs disponibles</label>
         <div class="choix-couleurs">
             @php $couleursChoisies = old('couleurs', isset($produit) ? $produit->couleurs->pluck('id')->all() : []); @endphp

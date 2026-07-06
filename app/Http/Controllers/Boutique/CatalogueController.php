@@ -55,6 +55,8 @@ class CatalogueController extends Controller
             ->with(['images', 'couleurs', 'categorie'])
             ->firstOrFail();
 
+        $variantes = $produit->variantes();
+
         $similaires = Produit::where('actif', true)
             ->where('categorie_id', $produit->categorie_id)
             ->where('id', '!=', $produit->id)
@@ -67,6 +69,6 @@ class CatalogueController extends Controller
         );
         $lienWhatsapp = 'https://wa.me/' . config('boutique.whatsapp') . '?text=' . $messageWhatsapp;
 
-        return view('boutique.produit', compact('produit', 'similaires', 'lienWhatsapp'));
+        return view('boutique.produit', compact('produit', 'variantes', 'similaires', 'lienWhatsapp'));
     }
 }

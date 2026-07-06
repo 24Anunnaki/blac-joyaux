@@ -14,6 +14,7 @@ class Produit extends Model
     protected $table = 'produits';
 
     protected $fillable = [
+        'modele_id',
         'nom', 'slug', 'categorie_id', 'description', 'histoire',
         'prix', 'stock', 'matiere', 'occasion', 'dimensions',
         'actif', 'mis_en_avant',
@@ -75,6 +76,23 @@ class Produit extends Model
     }
 
     /* ----- Helpers ----- */
+
+    /**
+     * Retourne tous les coloris du même modèle (y compris ce produit).
+     * Si le produit n'a pas de modele_id, retourne juste lui-même.
+     */
+    public function variantes()
+    {
+        if (! $this->modele_id) {
+            return collect([$this]);
+        }
+
+        return self::where('modele_id', $this->modele_id)
+            ->where('actif', true)
+            ->with(['couleurs', 'imagePrincipale'])
+            ->orderBy('id')
+            ->get();
+    }
 
     public function prixFormate(): string
     {
