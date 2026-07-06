@@ -1,24 +1,24 @@
 @extends('boutique.layout')
 
-@section('titre', 'L'\''Indigo de Bla — Proposition capsule Blac Joyaux')
-@section('meta_description', 'L'\''Indigo de Bla : proposition de sac besace masculin en cuir bleu nuit, motifs Aliwax. Concept capsule Blac Joyaux 2026.')
+@section('titre', 'L\'Indigo de Bla — Proposition capsule Blac Joyaux')
+@section('meta_description', 'L\'Indigo de Bla : proposition de sac besace masculin en cuir bleu nuit, motifs Aliwax. Concept capsule Blac Joyaux 2026.')
 
 @section('contenu')
 
 <div class="capsule-page">
 
     <div class="fil" style="margin-bottom: 16px;">
-        <a href="{{ route('boutique.capsule') }}" style="color: var(--or);">Capsule</a> · L'\''Indigo de Bla
+        <a href="{{ route('boutique.capsule') }}" style="color: var(--or);">Capsule</a> · L'Indigo de Bla
     </div>
 
     <div class="capsule-page-grid">
 
         <div class="cp-galerie">
             <div class="cp-principale">
-                <img id="cp-image" src="{{ asset('images/capsule/indigo_bla.jpeg') }}" alt="L'\''Indigo de Bla — proposition Blac Joyaux">
+                <img id="cp-image" src="{{ asset('images/capsule/indigo_bla.jpeg') }}" alt="L'Indigo de Bla — proposition Blac Joyaux">
             </div>
             <div class="cp-miniatures">
-                <img src="{{ asset('images/capsule/indigo_bla.jpeg') }}" alt="L'\''Indigo de Bla vue 1" onclick="document.getElementById('cp-image').src=this.src">
+                <img src="{{ asset('images/capsule/indigo_bla.jpeg') }}" alt="L'Indigo de Bla vue 1" onclick="document.getElementById('cp-image').src=this.src">
                 {{-- Ajoute d'autres vues ici quand tu les auras :
                 <img src="{{ asset('images/capsule/AUTRE.jpeg') }}" alt="vue 2" onclick="document.getElementById('cp-image').src=this.src">
                 --}}
@@ -27,7 +27,7 @@
 
         <div class="cp-texte">
             <div class="fil">Modèle 02 · Capsule concept 2026</div>
-            <h1>L'\''Indigo de Bla</h1>
+            <h1>L'Indigo de Bla</h1>
 
             @include('boutique.partials.capsule-note')
 
