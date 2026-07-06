@@ -18,10 +18,11 @@
                 <img id="cp-image" src="{{ asset('images/capsule/kente.jpeg') }}" alt="Le Kente — proposition Blac Joyaux">
             </div>
             <div class="cp-miniatures">
-                <img src="{{ asset('images/capsule/kente.jpeg') }}" alt="Le Kente vue 1" onclick="document.getElementById('cp-image').src=this.src">
-                {{-- Ajoute d'autres vues ici quand tu les auras :
-                <img src="{{ asset('images/capsule/AUTRE.jpeg') }}" alt="vue 2" onclick="document.getElementById('cp-image').src=this.src">
-                --}}
+                <img src="{{ asset('images/capsule/kente1.jpeg') }}" alt="Le Kente vue 1" onclick="document.getElementById('cp-image').src=this.src">
+                <img src="{{ asset('images/capsule/kente2.jpeg') }}" alt="Le Kente vue 2" onclick="document.getElementById('cp-image').src=this.src">
+                <img src="{{ asset('images/capsule/kente3.jpeg') }}" alt="Le Kente vue 3" onclick="document.getElementById('cp-image').src=this.src">
+                <img src="{{ asset('images/capsule/kente4.jpeg') }}" alt="Le Kente vue 4" onclick="document.getElementById('cp-image').src=this.src">
+                <img src="{{ asset('images/capsule/kente5.jpeg') }}" alt="Le Kente vue 5" onclick="document.getElementById('cp-image').src=this.src">
             </div>
         </div>
 

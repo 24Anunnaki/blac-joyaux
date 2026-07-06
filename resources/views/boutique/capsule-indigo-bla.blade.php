@@ -15,13 +15,12 @@
 
         <div class="cp-galerie">
             <div class="cp-principale">
-                <img id="cp-image" src="{{ asset('images/capsule/indigo_bla.jpeg') }}" alt="L'Indigo de Bla — proposition Blac Joyaux">
+                <img id="cp-image" src="{{ asset('images/capsule/indigo_bla1.jpeg') }}" alt="L'Indigo de Bla — proposition Blac Joyaux">
             </div>
             <div class="cp-miniatures">
-                <img src="{{ asset('images/capsule/indigo_bla.jpeg') }}" alt="L'Indigo de Bla vue 1" onclick="document.getElementById('cp-image').src=this.src">
-                {{-- Ajoute d'autres vues ici quand tu les auras :
-                <img src="{{ asset('images/capsule/AUTRE.jpeg') }}" alt="vue 2" onclick="document.getElementById('cp-image').src=this.src">
-                --}}
+                <img src="{{ asset('images/capsule/indigo_bla1.jpeg') }}" alt="L'Indigo de Bla vue 1" onclick="document.getElementById('cp-image').src=this.src">
+                <img src="{{ asset('images/capsule/indigo_bla2.jpeg') }}" alt="L'Indigo de Bla vue 2" onclick="document.getElementById('cp-image').src=this.src">
+                <img src="{{ asset('images/capsule/indigo_bla3.jpeg') }}" alt="L'Indigo de Bla vue 3" onclick="document.getElementById('cp-image').src=this.src">
             </div>
         </div>
 

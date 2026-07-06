@@ -18,10 +18,10 @@
                 <img id="cp-image" src="{{ asset('images/capsule/saphir_noir.jpeg') }}" alt="Le Saphir Noir — proposition Blac Joyaux">
             </div>
             <div class="cp-miniatures">
-                <img src="{{ asset('images/capsule/saphir_noir.jpeg') }}" alt="Le Saphir Noir vue 1" onclick="document.getElementById('cp-image').src=this.src">
-                {{-- Ajoute d'autres vues ici quand tu les auras :
-                <img src="{{ asset('images/capsule/AUTRE.jpeg') }}" alt="vue 2" onclick="document.getElementById('cp-image').src=this.src">
-                --}}
+                <img src="{{ asset('images/capsule/saphir_noir1.jpeg') }}" alt="Le Saphir Noir vue 1" onclick="document.getElementById('cp-image').src=this.src">
+                <img src="{{ asset('images/capsule/saphir_noir2.jpeg') }}" alt="Le Saphir Noir vue 2" onclick="document.getElementById('cp-image').src=this.src">
+                <img src="{{ asset('images/capsule/saphir_noir3.jpeg') }}" alt="Le Saphir Noir vue 3" onclick="document.getElementById('cp-image').src=this.src">
+                <img src="{{ asset('images/capsule/saphir_noir4.jpeg') }}" alt="Le Saphir Noir vue 4" onclick="document.getElementById('cp-image').src=this.src">
             </div>
         </div>
 
