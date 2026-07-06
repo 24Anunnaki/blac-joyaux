@@ -154,6 +154,25 @@
             .bloc-edito .visual .doll { font-size: 150px; }
             .bloc-edito .txt { padding: 12vh 24px; }
         }
+
+        .variantes { margin: 22px 0; }
+        .variantes-label {
+            font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+            color: #8A8178; margin-bottom: 10px;
+        }
+        .variantes-pastilles { display: flex; gap: 10px; flex-wrap: wrap; }
+        .pastille {
+            width: 30px; height: 30px; border-radius: 50%;
+            border: 2px solid transparent; cursor: pointer;
+            display: inline-block; transition: transform .15s, border-color .15s;
+            box-shadow: inset 0 0 0 1px rgba(0,0,0,.08);
+        }
+        .pastille:hover { transform: scale(1.12); }
+        .pastille.active {
+            border-color: #B8954A;
+            box-shadow: 0 0 0 2px rgba(184,149,74,.25);
+        }
+
     </style>
 </head>
 <body>
