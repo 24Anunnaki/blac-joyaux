@@ -29,26 +29,54 @@ class CatalogueController extends Controller
             'categories' => Categorie::withCount('produits')->orderBy('nom')->get(),
         ]);
     }
+
+
+    /**
+     * Vitrine de la collection capsule, branchée sur la base :
+     * les sacs affichés sont de vrais produits (achetables, filtrables).
+     */
     public function capsule()
-        {
-            return view('boutique.capsule');
-        }
+    {
+        $produitsCapsule = Produit::where('actif', true)
+            ->whereHas('categorie', fn ($q) => $q->where('slug', 'capsule'))
+            ->with(['imagePrincipale', 'images', 'couleurs'])
+            ->orderBy('prix', 'desc')
+            ->get();
 
-        public function capsuleSaphirNoir()
-        {
-            return view('boutique.capsule-saphir-noir');
-        }
+        return view('boutique.capsule', compact('produitsCapsule'));
+    }
 
-        public function capsuleIndigo()
-        {
-            return view('boutique.capsule-indigo-bla');
-        }
+    /**
+     * Pages storytelling individuelles de la capsule (design du front).
+     * Chacune reçoit son vrai produit pour lier vers la fiche achetable.
+     */
+    public function capsuleSaphirNoir()
+    {
+        return $this->pageCapsule('saphir-noir', 'boutique.capsule-saphir-noir');
+    }
 
-        public function capsuleKente()
-        {
-            return view('boutique.capsule-kente');
-        }
+    public function capsuleIndigo()
+    {
+        return $this->pageCapsule('indigo-de-bla', 'boutique.capsule-indigo-bla');
+    }
 
+    public function capsuleKente()
+    {
+        return $this->pageCapsule('kente', 'boutique.capsule-kente');
+    }
+
+    private function pageCapsule(string $slug, string $vue)
+    {
+        // Le produit réel correspondant (créé par CapsuleSeeder).
+        // Nullable : la page reste consultable même si le seeder n'a pas tourné,
+        // mais la vue doit tester @if($produit) avant d'afficher prix / bouton panier.
+        $produit = Produit::where('slug', $slug)
+            ->where('actif', true)
+            ->with(['imagePrincipale', 'images', 'couleurs'])
+            ->first();
+
+        return view($vue, compact('produit'));
+    }
 
     public function index(Request $request)
     {

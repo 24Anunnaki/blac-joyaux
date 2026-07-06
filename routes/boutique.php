@@ -16,10 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::name('boutique.')->group(function () {
 
     Route::get('/', [CatalogueController::class, 'accueil'])->name('accueil');
+
+    // Collection capsule : vitrine éditoriale branchée sur la base de données
     Route::get('/capsule', [CatalogueController::class, 'capsule'])->name('capsule');
     Route::get('/capsule/saphir-noir', [CatalogueController::class, 'capsuleSaphirNoir'])->name('capsule.saphir');
     Route::get('/capsule/indigo-de-bla', [CatalogueController::class, 'capsuleIndigo'])->name('capsule.indigo');
     Route::get('/capsule/kente', [CatalogueController::class, 'capsuleKente'])->name('capsule.kente');
+
     Route::get('/sacs', [CatalogueController::class, 'index'])->name('catalogue');
     Route::get('/sacs/{slug}', [CatalogueController::class, 'show'])->name('produit');
 
@@ -37,11 +40,4 @@ Route::name('boutique.')->group(function () {
     Route::get('/paiement/{commande}', [PaiementController::class, 'show'])->name('paiement');
     Route::post('/paiement/{commande}', [PaiementController::class, 'simuler'])->name('paiement.simuler');
     Route::get('/confirmation/{commande}', [PaiementController::class, 'confirmation'])->name('confirmation');
-
-    // Capsules
-    Route::get('/capsule/saphir-noir', [CatalogueController::class, 'capsuleSaphirNoir'])->name('capsule.saphir');
-    Route::get('/capsule/indigo-de-bla', [CatalogueController::class, 'capsuleIndigo'])->name('capsule.indigo');
-    Route::get('/capsule/kente', [CatalogueController::class, 'capsuleKente'])->name('capsule.kente');
-
-
 });
