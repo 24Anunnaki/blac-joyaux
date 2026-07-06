@@ -15,7 +15,7 @@
 
         <div class="cp-galerie">
             <div class="cp-principale">
-                <img id="cp-image" src="{{ asset('images/capsule/kente.jpeg') }}" alt="Le Kente — proposition Blac Joyaux">
+                <img id="cp-image" src="{{ asset('images/capsule/kente1.jpeg') }}" alt="Le Kente — proposition Blac Joyaux">
             </div>
             <div class="cp-miniatures">
                 <img src="{{ asset('images/capsule/kente1.jpeg') }}" alt="Le Kente vue 1" onclick="document.getElementById('cp-image').src=this.src">

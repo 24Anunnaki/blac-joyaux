@@ -15,7 +15,7 @@
 
         <div class="cp-galerie">
             <div class="cp-principale">
-                <img id="cp-image" src="{{ asset('images/capsule/saphir_noir.jpeg') }}" alt="Le Saphir Noir — proposition Blac Joyaux">
+                <img id="cp-image" src="{{ asset('images/capsule/saphir_noir1.jpeg') }}" alt="Le Saphir Noir — proposition Blac Joyaux">
             </div>
             <div class="cp-miniatures">
                 <img src="{{ asset('images/capsule/saphir_noir1.jpeg') }}" alt="Le Saphir Noir vue 1" onclick="document.getElementById('cp-image').src=this.src">
