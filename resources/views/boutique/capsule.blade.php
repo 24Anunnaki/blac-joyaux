@@ -61,8 +61,8 @@
 <style>
     .capsule-liste { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
     .capsule-carte { display: block; }
-    .cc-img { aspect-ratio: 16/10; overflow: hidden; border-radius: 4px; margin-bottom: 16px; box-shadow: 0 14px 40px rgba(0,0,0,.1); }
-    .cc-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+    .cc-img { aspect-ratio: 4/5; overflow: hidden; border-radius: 4px; margin-bottom: 16px; box-shadow: 0 14px 40px rgba(0,0,0,.1); }
+    .cc-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
     .capsule-carte:hover .cc-img img { transform: scale(1.06); }
     .cc-num { font-family: 'Fraunces', serif; font-size: 12px; color: var(--or); letter-spacing: .1em; margin-bottom: 4px; }
     .cc-nom { font-family: 'Fraunces', serif; font-size: 24px; font-weight: 300; margin-bottom: 6px; }
@@ -70,7 +70,7 @@
     .cc-lien { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--encre); border-bottom: 1px solid var(--or); padding-bottom: 3px; }
     @media (max-width: 780px) {
         .capsule-liste { grid-template-columns: 1fr; gap: 40px; }
-        .cc-img { aspect-ratio: 16/11; }
+        .cc-img { aspect-ratio: 4/5; }
     }
 </style>
 

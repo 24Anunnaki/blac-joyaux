@@ -231,14 +231,12 @@
         <div class="foot-col">
             <h4>Boutique</h4>
             <a href="{{ route('boutique.catalogue') }}">Tous les sacs</a>
-            <a href="{{ route('boutique.catalogue', ['occasion' => 'Cadeau']) }}">Offrir</a>
             <a href="{{ route('boutique.panier') }}">Mon panier</a>
         </div>
         <div class="foot-col">
             <h4>La Maison</h4>
             <a href="#">Notre histoire</a>
             <a href="#">Savoir-faire</a>
-            <a href="#">Le showroom</a>
         </div>
         <div class="foot-col">
             <h4>Aide</h4>
