@@ -10,13 +10,23 @@
     <div class="galerie-fiche">
         <div class="principale" style="aspect-ratio: 4/5; background: var(--blanc-chaud); border: 1px solid var(--ligne); display: flex; align-items: center; justify-content: center; color: var(--gris); overflow: hidden;">
             @if ($produit->imagePrincipale)
-                <img src="{{ $produit->imagePrincipale->lien() }}" alt="Sac {{ $produit->nom }}" style="width: 100%; height: 100%; object-fit: cover;">
+                <img id="fp-image" src="{{ $produit->imagePrincipale->lien() }}" alt="Sac {{ $produit->nom }}" style="width: 100%; height: 100%; object-fit: cover;">
             @else
                 Photo à venir
             @endif
         </div>
-    </div>
 
+        {{-- GALERIE — TOUTES LES PHOTOS --}}
+        @if ($produit->images->count() > 1)
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 10px;">
+                @foreach ($produit->images as $photo)
+                    <div style="aspect-ratio: 1/1; border: 1px solid var(--ligne); overflow: hidden; cursor: pointer;">
+                        <img src="{{ $photo->lien() }}" alt="Sac {{ $produit->nom }} — photo {{ $loop->iteration }}" style="width: 100%; height: 100%; object-fit: cover;" onclick="document.getElementById('fp-image').src=this.src">
+                    </div>
+                @endforeach
+            </div>
+        @endif
+    </div>
     {{-- COLONNE DROITE : INFOS --}}
     <div>
         <div class="fil">{{ $produit->categorie->nom }}</div>
