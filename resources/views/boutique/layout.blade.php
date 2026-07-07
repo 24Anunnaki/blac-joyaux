@@ -99,7 +99,8 @@
         .folio { position: absolute; top: 50%; transform: translateY(-50%); font-family: 'Fraunces', serif; font-size: 22vw; line-height: .8; color: rgba(184,149,74,.08); z-index: 0; font-weight: 300; pointer-events: none; }
         .folio.left { left: -2vw; } .folio.right { right: -2vw; }
 
-        .hero { background: radial-gradient(ellipse at 65% 45%,#2a2118,#14110E 70%); color: var(--ivoire); flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .hero { position: relative; overflow: hidden; background: url('{{ asset("images/hero.jpeg") }}') center/cover no-repeat; color: var(--ivoire); flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(rgba(20,17,14,0.55), rgba(20,17,14,0.75)); z-index: 1; }
         .hero-kicker { font-size: 12px; letter-spacing: .5em; text-transform: uppercase; color: var(--or-doux); margin-bottom: 28px; opacity: 0; animation: fadeUp 1s .2s forwards; z-index: 2; }
         .hero-title { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(48px,9vw,130px); line-height: .95; opacity: 0; animation: fadeUp 1.1s .45s forwards; z-index: 2; }
         .hero-title em { font-style: italic; color: var(--or-doux); }
@@ -117,6 +118,9 @@
         .bloc-edito { background: var(--ivoire); }
         .bloc-edito .inner { display: grid; grid-template-columns: 1fr 1fr; width: 100%; align-items: center; }
         .bloc-edito .visual { height: 100vh; background: linear-gradient(160deg,#2a2118,#14110E); display: flex; align-items: center; justify-content: center; position: relative; }
+        .bloc-edito .visual img { width: 100%; height: 100%; object-fit: cover; }
+        .closing .visual { max-width: 340px; margin: 0 auto 32px; }
+        .closing .visual img { width: 100%; height: auto; border-radius: 4px; display: block; }
         .bloc-edito .visual .doll { font-size: 230px; filter: drop-shadow(0 20px 50px rgba(0,0,0,.5)); }
         .bloc-edito .visual .stamp { position: absolute; bottom: 44px; left: 44px; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--or-doux); }
         .bloc-edito .txt { padding: 0 8vw; }
@@ -183,7 +187,8 @@
     <div class="barre">
         <a href="{{ route('boutique.accueil') }}" class="logo">Blac Joyaux</a>
         <nav class="nav-site">
-            <a href="{{ route('boutique.catalogue') }}" class="{{ request()->routeIs('boutique.catalogue') ? 'actif' : '' }}">Les sacs</a>
+            <a href="{{ route('boutique.catalogue') }}" class="{{ request()->routeIs('boutique.catalogue') ? 'actif' : '' }}">Produits</a>
+            <a href="{{ route('boutique.histoire') }}" class="{{ request()->routeIs('boutique.histoire') ? 'actif' : '' }}">Notre histoire</a>
             <a href="{{ route('boutique.capsule') }}" class="masquer-mobile">Capsule</a>
             <a href="https://wa.me/{{ config('boutique.whatsapp') }}" target="_blank" rel="noopener" class="masquer-mobile">WhatsApp</a>
             <a href="{{ route('boutique.panier') }}" class="lien-panier {{ request()->routeIs('boutique.panier') ? 'actif' : '' }}">
@@ -235,8 +240,7 @@
         </div>
         <div class="foot-col">
             <h4>La Maison</h4>
-            <a href="#">Notre histoire</a>
-            <a href="#">Savoir-faire</a>
+            <a href="{{ route('boutique.histoire') }}">Notre histoire</a>
         </div>
         <div class="foot-col">
             <h4>Aide</h4>

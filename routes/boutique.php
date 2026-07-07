@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::name('boutique.')->group(function () {
 
     Route::get('/', [CatalogueController::class, 'accueil'])->name('accueil');
+    Route::get('/notre-histoire', [CatalogueController::class, 'notreHistoire'])->name('histoire');
 
+    
     // Collection capsule : vitrine éditoriale branchée sur la base de données
     Route::get('/capsule', [CatalogueController::class, 'capsule'])->name('capsule');
     Route::get('/capsule/saphir-noir', [CatalogueController::class, 'capsuleSaphirNoir'])->name('capsule.saphir');

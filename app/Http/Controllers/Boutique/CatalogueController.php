@@ -30,6 +30,11 @@ class CatalogueController extends Controller
         ]);
     }
 
+    public function notreHistoire()
+    {
+        return view('boutique.notre-histoire');
+    }
+
 
     /**
      * Vitrine de la collection capsule, branchée sur la base :

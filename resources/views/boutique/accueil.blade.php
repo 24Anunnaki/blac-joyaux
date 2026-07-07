@@ -9,13 +9,13 @@
 
 {{-- CHAPITRE 0 — HERO --}}
 <section class="chapter hero">
+    <div class="hero-overlay"></div>
     <div class="hero-bag">👜</div>
     <div class="hero-kicker">Maison ivoirienne · depuis 2024</div>
     <h1 class="hero-title">L'avenir<br><em>en main</em></h1>
     <p class="hero-sub">Des joyaux noirs qui se portent en héritage avec élégance. Façonnés à la main, à Abidjan.</p>
     <div class="hero-scroll"><span>Découvrir</span><div class="line"></div></div>
 </section>
-
 {{-- CHAPITRE I — HÉRITAGE --}}
 <section class="chapter bloc-edito">
     <span class="folio left">I</span>
@@ -62,13 +62,5 @@
 </section>
 @endif
 
-{{-- CHAPITRE III — L'IDÉE CADEAU --}}
-<section class="chapter closing">
-    <span class="folio right">III</span>
-    <div class="eyebrow reveal" style="color:var(--or-doux);">L'idée cadeau parfaite</div>
-    <h2 class="big reveal d1">Un Joyau,<br>ça <em>s'offre</em></h2>
-    <p class="body-txt reveal d2" style="color:#cfc4b2;margin-inline:auto;text-align:center;">Emballage cadeau élégant et petit mot personnalisé offerts. Faites livrer directement chez la personne qui compte.</p>
-    <a href="{{ route('boutique.catalogue', ['occasion' => 'Cadeau']) }}" class="btn-ghost reveal d3">Voir les sacs à offrir</a>
-</section>
 
 @endsection
