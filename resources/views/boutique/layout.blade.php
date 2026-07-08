@@ -244,8 +244,8 @@
         </div>
         <div class="foot-col">
             <h4>Aide</h4>
-            <a href="{{ config('boutique.delai_livraison') ? '#' : '#' }}">Livraison</a>
-            <a href="#">Paiement</a>
+            <a href="{{ route('boutique.paiement_livraison') }}">Livraison</a>
+            <a href="{{ route('boutique.paiement_livraison') }}">Paiement</a>
             <a href="https://wa.me/{{ config('boutique.whatsapp') }}" target="_blank" rel="noopener">WhatsApp</a>
         </div>
         <div class="foot-col">

@@ -21,7 +21,7 @@
     <span class="folio left">I</span>
     <div class="inner">
         <div class="visual reveal">
-            <div class="doll">🪆</div>
+            <div class="doll"><img src="images/marque/poupe-bla-removebg-preview.png" alt="Poupée Joyau de Bla" style="width: 520px;"> </div>
             <div class="stamp">La poupée Joyau de Bla</div>
         </div>
         <div class="txt">

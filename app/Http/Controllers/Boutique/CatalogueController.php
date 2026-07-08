@@ -36,6 +36,11 @@ class CatalogueController extends Controller
     }
 
 
+    public function paiementLivraison()
+    {
+        return view('boutique.paiement-livraison');
+    }
+
     /**
      * Vitrine de la collection capsule, branchée sur la base :
      * les sacs affichés sont de vrais produits (achetables, filtrables).
